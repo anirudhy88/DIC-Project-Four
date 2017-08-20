@@ -1,0 +1,6 @@
+The plots of 2a and 2b clearly shows that the execution time increases with 
+increase in number of input documents.
+
+More specifically, upto 50 documents, 2a executes faster than  2b.
+As the number of documents has increased above 50, execution time has been observed
+to be similar for both 2a and 2b.

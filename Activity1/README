@@ -1,0 +1,34 @@
+Procedure : Featured Activity 1: Wordcount on Classical Latin text 
+------------------------------------------------------------------
+You are in the below working directory : 
+/home/hadoop/Desktop/WordCountLatin/
+
+Below are the commands to be given from the current path.
+
+1. (Optional)Compile the java file using below command : 
+hadoop com.sun.tools.javac.Main WordCountLatin.java
+
+2. (Optional)Generate jar file using below command
+jar cf wcl.jar WordCountLatin*.class
+
+3. I had run around 238 files which are in the "Input" folder
+Transfer files to the hdfs using the below commands
+hdfs dfs -rm -r ~/input
+hdfs dfs -mkdir -p ~/input
+hdfs dfs -put Input/ ~/input
+
+4. File used for lemmatization is : new_lemmatizer.csv 
+
+5. To run jar from "Jar" directory
+hadoop jar wcl.jar WordCountLatin ~/input ~/output  new_lemmatizer.csv
+
+6. To view the output, use the below commands
+rm -rf output
+hdfs dfs -get ~/output
+(I have used 5 reducers, as I am using large number of files. So 5 files are generated in output folder)
+vi output/part-r-00000
+vi output/part-r-00001
+vi output/part-r-00002
+vi output/part-r-00003
+vi output/part-r-00004
+

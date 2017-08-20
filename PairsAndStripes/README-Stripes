@@ -1,0 +1,26 @@
+Procedure : Word co-occurrence on tweets - Stripes
+--------------------------------------------------
+Below are the commands to be given from the current path.
+
+1. (Optional)Compile the java file using below command : 
+hadoop com.sun.tools.javac.Main StripesOccurrence.java
+
+
+2. (Optional)Generate jar file using below command
+jar cf sc.jar StripesOccurrence*.class
+
+3. I had run around 238 files which are in the "Input" folder
+Transfer files to the hdfs using the below commands
+hdfs dfs -rm -r ~/input
+hdfs dfs -mkdir -p ~/input
+hdfs dfs -put Input/ ~/input
+
+
+5. To run jar from "Jar" directory
+hadoop jar sc.jar StripesOccurrence ~/input ~/output
+
+6. To view the output, use the below commands
+rm -rf output
+hdfs dfs -get ~/output
+
+

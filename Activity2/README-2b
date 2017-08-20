@@ -1,0 +1,33 @@
+Procedure : Featured Activity 2b: Word co-occurrence among multiple documents 
+-----------------------------------------------------------------------------
+You are in the below working directory : 
+/home/hadoop/Desktop/Activity-2/
+
+Below are the commands to be given from the current path.
+
+1. (Optional)Compile the java file using below command : 
+hadoop com.sun.tools.javac.Main WordCoOccurence3gram.java
+
+2. (Optional)Generate jar file using below command
+jar cf a4a.jar WordCoOccurence3gram*.class
+
+3. I had run around 150 files which are in the "Input" folder
+Transfer files to the hdfs using the below commands
+hdfs dfs -rm -r ~/input
+hdfs dfs -mkdir -p ~/input
+hdfs dfs -put Input/ ~/input
+
+4. File used for lemmatization is : new_lemmatizer.csv 
+
+5. To run jar from "Jar" directory
+hadoop jar a2b.jar WordCoOccurence3gram ~/input ~/output  new_lemmatizer.csv
+
+6. To view the output, use the below commands
+rm -rf output
+hdfs dfs -get ~/output*
+
+7. 7. "log2b" file consists of the time taken for execution for total 150 files
+with intervals of 10 docs.
+   "2b.png" file consists of the plot
+
+
